@@ -1,0 +1,8 @@
+INPUT numOfContainers
+IF numOfContainers == 0
+  OUTPUT 'Please enter a number'
+ELSE
+  CONVERT numOfContainers to int
+  CALCULATE refundAmount = numOfContainers x 0.10
+  OUTPUT refundAmount
+ENDIF

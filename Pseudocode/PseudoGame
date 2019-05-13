@@ -1,0 +1,30 @@
+CALCULATE item1Array = ARRAY['can', 'paper', 'pizza box', 'dead leaves']
+CALCULATE item1 = get random value from item1Array
+INPUT itemGuess1
+CASE OF item1
+  'can'        : IF itemGuess1 = 'yellow', 'Yellow'
+                   CALCULTE scoreCount1 = scoreCount1 + 10
+                 ELSE IF itemGuess1 = 'green', 'Green'
+                   CALCULATE scoreCount1 = scoreCount1 - 5
+                 ELSE IF itemGuess1 = 'red', 'Red'
+                   CALCULATE scoreCount1 = scoreCount1 - 1
+  'paper'      : IF itemGuess1 = 'yellow', 'Yellow'
+                   CALCULTE scoreCount1 = scoreCount1 + 10
+                 ELSE IF itemGuess1 = 'green', 'Green'
+                   CALCULATE scoreCount1 = scoreCount1 - 5
+                 ELSE IF itemGuess1 = 'red', 'Red'
+                   CALCULATE scoreCount1 = scoreCount1 - 1
+  'pizza box'  : IF itemGuess1 = 'yellow', 'Yellow'
+                   CALCULTE scoreCount1 = scoreCount1 - 1
+                 ELSE IF itemGuess1 = 'green', 'Green'
+                   CALCULATE scoreCount1 = scoreCount1 - 5
+                 ELSE IF itemGuess1 = 'red', 'Red'
+                   CALCULATE scoreCount1 = scoreCount1 + 10
+  'dead leaves': IF itemGuess1 = 'yellow', 'Yellow'
+                   CALCULTE scoreCount1 = scoreCount1 - 1
+                 ELSE IF itemGuess1 = 'green', 'Green'
+                   CALCULATE scoreCount1 = scoreCount1 + 10
+                 ELSE IF itemGuess1 = 'red', 'Red'
+                   CALCULATE scoreCount1 = scoreCount1 - 5
+  OTHER        : OTHER 'Please enter a valid option'
+ENDCASE

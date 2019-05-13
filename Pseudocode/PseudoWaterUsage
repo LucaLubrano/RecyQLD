@@ -1,0 +1,56 @@
+INPUT numOfShowersPerDay
+INPUT timeInShower
+INPUT numOfWateringPlants
+INPUT numOfWashingCarPerMonth
+INPUT timeWashingCar
+INPUT waterUsageTier
+
+IF timeInShower > 3
+  CALCULATE amountOfLitresUsed = timeInShower * 7.95
+  CALCULATE litresSaved = litresSaved + amountOfLitresUsed - (3 * 7.95)
+  OUTPUT 'Reduce your time in the shower to 3 minutes to help reduce your water consumption'
+ELSE
+  OUTPUT 'Good work! You are spending the recommended amount of time in the shower'
+ENDIF
+
+IF numOfShowersPerDay > 1
+  CALCULATE litresSaved = litresSaved * numOfShowersPerDay - (3 * 7.95)
+  OUTPUT 'Decrease your number of showers a day to 1 to help reduce your water consumption'
+ELSE
+  OUTPUT 'Nice! You are saving the maximum amount of water'
+ENDIF
+
+IF numOfWateringPlants > 2
+  CALCULATE litresSaved = litresSaved + (numOfWateringPlants * 10 - (2 * 10))
+  OUTPUT 'Try watering your plants less frequently or about twice a week'
+ELSE
+  OUTPUT 'Nice Work! You are watering your plants enough but not too much'
+ENDIF
+
+IF timeWashingCar > 10
+  CALCULATE amountOfLitresUsed = timeWashingCar * 37.85
+  CALCULATE litresSaved = litresSaved + amountOfLitresUsed - (10 * 37.85)
+  OUTPUT 'Try to get your car washed within 10 minutes to save on water'
+ELSE
+  OUTPUT 'Good job! You wash your car well but not excessively'
+ENDIF
+
+IF numOfWashingCarPerMonth > 2
+  CALCULATE litresSaved = litresSaved + (amountOfLitresUsed * numOfWashingCarPerMonth - 2 * (10 * 37.85))
+  OUTPUT 'Decrease how frequently you wash your car to save water'
+ELSE
+  OUTPUT 'Nice one! You wash your car no more than twice a month'
+ENDIF
+
+CASE OF waterUsageTier
+  '1'     : CALCULATE moneySaved = (litresSaved / 1000) * 2.4441
+            OUTPUT moneySaved
+  '2'     : CALCULATE moneySaved = (litresSaved / 1000) * 3.1183
+            OUTPUT moneySaved
+  '3'     : CALCULATE moneySaved = (litresSaved / 1000) * 3.8615
+            OUTPUT moneySaved
+  OTHER   : OTHER 'Uh oh, We encountered an error, please ensure that you have entered your water bill tier'
+ENDCASE
+
+OUTPUT litresSaved
+OUTPUT moneySaved
