@@ -1,26 +1,15 @@
 // numOfContainers is the number of containers the user specifies in the text field (as a string)
-var numOfContainersString = "0"
-// numOfContainers as an integer
-var numOfContainersInt = 0
-// Total amount of money the user can get by refunding
-var refundAmount = 0
-// Convert it from a string to an integer
-numOfContainersInt = Int("\(numOfContainersString)")
+var numOfContainers: Int? = Int(txtContainers.text!)
 
-// If the user tries to calculate a refund amount without typing a number first
-if numOfContainersInt == 0 {
-  // Outputting an error message
-  lblErrorMessageRefundCalculator.text = ("Please enter a number").text
-}
-// Else if the user inputs a number that is not 0
-else if numOfContainersInt > 0 {
-  // Calculate the total refundable amount
-  refundAmount = numOfContainersInt * 0.10
-  // Output the amount on the screen
-  lblRefundOutput.text = ("\(refundAmount)").text
-}
-// Else if the user does not input a number
-else if numOfContainersInt == nil{
+// If the user does not input a number or enters a negative number
+if (numOfContainersInt == nil) || (numOfContainers <= 0){
   // Print an error asking the user to input a valid number
-  lblErrorMessageRefundCalculator.text = ("Please enter a valid number").text
+  lblErrorMessageRefundCalculator.text = ("Please enter a valid number")
+}
+// Else if the user inputs a valid number
+else if numOfContainersInt > 0 {
+  // Total amount of money the user can get by refunding
+  let refundAmount:Int = numOfContainers! * 0.10
+  // Output the amount on the screen
+  lblRefundOutput.text = ("\(refundAmount)")
 }
