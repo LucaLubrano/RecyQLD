@@ -1,4 +1,4 @@
-  // Individual way
+// Individual way
   var numOfShowerPerDay = Int("\(txtNumOfShowersPD.text)")
   var timeInShower = Int("\(txtTimeInShower.text)")
   var numWateringPlants = Int("\(txtNumWateringPlants.text)")
@@ -84,8 +84,7 @@ else {
 
 // Time washing their car a month
 // If the user enters an invalid character or a nagative
-if (timeWashingCar == nil) || (timeWashingCar < 0)
-{
+if (timeWashingCar == nil) || (timeWashingCar < 0){
   // Outputs an error message asking the user to enter an accepted number
   lblOutputTimeWashingCar.text = ("Please enter a valid number")
 }
@@ -107,8 +106,10 @@ else{
 
 // Amount of times washing their car a month
 // If the user enters an invalid character or a nagative
-if (numWashingCarPerMonth == nil) || (numWashingCarPerMonth < 0)
-// If the user enters a valid number above or equal to 0
+if (numWashingCarPerMonth == nil) || (numWashingCarPerMonth < 0) {
+// Outputs an error message asking the user to enter an accepted number
+lblOutputTimeWashingCar.text = ("Please enter a valid number") }
+//If the user enters a valid number above or equal to 0
 else {
   // If the user washes their car more frequently than the ideal
   if numWashingCarPerMonth > 2{
