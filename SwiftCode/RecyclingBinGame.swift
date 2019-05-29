@@ -1,4 +1,4 @@
-        // Declare an array that contains the possible items that can be shown on the first image
+// Declare an array that contains the possible items that can be shown on the first image
         var rubbishArray1:[String] = ["aluminiumCan", "paper", "pizzaBox", "leaves"]
         // Declare an array that contains the possible items that can be shown on the second image
         var rubbishArray2:[String] = ["foodScraps", "styrofoam", "hardPlastics", "tissues"]
@@ -21,11 +21,11 @@
         var item4 = rubbishArray4[ranNum4]
         var item5 = rubbishArray5[ranNum5]
         // Get the users input as a string from the text field
-        var itemGuess1 = ("\(txtItem1Input)")
-        var itemGuess2 = ("\(txtItem2Input)")
-        var itemGuess3 = ("\(txtItem3Input)")
-        var itemGuess4 = ("\(txtItem4Input)")
-        var itemGuess5 = ("\(txtItem4Input)")
+        var itemGuess1 = (txtItem1Input.text)
+        var itemGuess2 = (txtItem2Input.text)
+        var itemGuess3 = (txtItem3Input.text)
+        var itemGuess4 = (txtItem4Input.text)
+        var itemGuess5 = (txtItem4Input.text)
         // Declare a variable that will hold the users score
         var scoreCount = 0
         // Determine the if the users guess is correct
@@ -34,68 +34,68 @@
         // when item 1 is a can
         case "aluminiumCan":
             // if the user gets the answer right
-            if itemGuess1 == "yellow" || "Yellow" {
+            if (itemGuess1 == "yellow") || (itemGuess1 == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess1 == "green" || "Green" {
+            else if (itemGuess1 == "green") || (itemGuess1 == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess1 == "red" || "Red" {
+            else if (itemGuess1 == "red") || (itemGuess1 == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // if item 1 is a paper
         case "paper":
             // if the user gets the answer right
-            if itemGuess1 == "yellow" || "Yellow" {
+            if (itemGuess1 == "yellow") || (itemGuess1 == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess1 == "green" || "Green" {
+            else if (itemGuess1 == "green") || (itemGuess1 == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess1 == "red" || "Red" {
+            else if (itemGuess1 == "red") || (itemGuess1 == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is pizzaBox
         case "pizzaBox":
             // if the user gets the answer right
-            if itemGuess1 =="red" || "Red" {
+            if (itemGuess1 == "red") || (itemGuess1 == "Red") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess1 == "green" || "Green" {
+            else if (itemGuess1 == "green") || (itemGuess1 == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess1 == "yellow" || "Yellow" {
+            else if (itemGuess1 == "yellow") || (itemGuess1 == "Yellow") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is leaves
         case "leaves":
             // if the user gets the answer right
-            if itemGuess1 == "green" || "Green" {
+            if (itemGuess1 == "green") || (itemGuess1 == "Green") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess1 == "yellow" || "Yellow" {
+            else if (itemGuess1 == "yellow") || (itemGuess1 == "Yellow") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess1 == "red" || "Red" {
+            else if (itemGuess1 == "red") || (itemGuess1 == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
@@ -107,68 +107,68 @@
         // when item 1 is a can
         case "foodScraps":
             // if the user gets the answer right
-            if itemGuess2 == "yellow" || "Yellow" {
+            if (itemGuess2 == "yellow") || (itemGuess2 == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess2 == "green" || "Green" {
+            else if (itemGuess2 == "green") || (itemGuess2 == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess2 == "red" || "Red" {
+            else if (itemGuess2 == "red") || (itemGuess2 == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // if item 1 is a paper
         case "styrofoam":
             // if the user gets the answer right
-            if itemGuess2 == "yellow" || "Yellow" {
+            if (itemGuess2 == "yellow") || (itemGuess2 == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess2 == "green" || "Green" {
+            else if (itemGuess2 == "green") || (itemGuess2 == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess2 == "red" || "Red" {
+            else if (itemGuess2 == "red") || (itemGuess2 == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is pizzaBox
         case "hardPlastics":
             // if the user gets the answer right
-            if itemGuess2 == "red" || "Red" {
+            if (itemGuess2 == "red") || (itemGuess2 == "Red") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess2 == "green" || "Green" {
+            else if (itemGuess2 == "green") || (itemGuess2 == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess2 == "yellow" || "Yellow" {
+            else if (itemGuess2 == "yellow") || (itemGuess2 == "Yellow") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is leaves
         case "tissues":
             // if the user gets the answer right
-            if itemGuess2 == "green" || "Green" {
+            if (itemGuess2 == "green") || (itemGuess2 == "Green") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess2 == "red" || "Red" {
+            else if (itemGuess2 == "red") || (itemGuess2 == "Red") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess2 == "yellow" || "Yellow" {
+            else if (itemGuess2 == "yellow") || (itemGuess2 == "Yellow") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
@@ -180,68 +180,68 @@
         // when item 1 is a can
         case "cartons":
             // if the user gets the answer right
-            if itemGuess3 == "yellow" || "Yellow" {
+            if (itemGuess3 == "yellow") || (itemGuess3 == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess3 == "green" || "Green" {
+            else if (itemGuess3 == "green") || (itemGuess3 == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess3 == "red" || "Red" {
+            else if (itemGuess3 == "red") || (itemGuess3 == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // if item 1 is a paper
         case "glassBottles":
             // if the user gets the answer right
-            if itemGuess3 == "yellow" || "Yellow" {
+            if (itemGuess3 == "yellow") || (itemGuess3 == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess3 == "green" || "Green" {
+            else if (itemGuess3 == "green") || (itemGuess3 == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess3 == "red" || "Red" {
+            else if (itemGuess3 == "red") || (itemGuess3 == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is pizzaBox
         case "softPlastics":
             // if the user gets the answer right
-            if itemGuess3 == "red" || "Red" {
+            if (itemGuess3 == "red") || (itemGuess3 == "Red") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess3 == "green" || "Green" {
+            else if (itemGuess3 == "green") || (itemGuess3 == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess3 == "yellow" || "Yellow" {
+            else if (itemGuess3 == "yellow") || (itemGuess3 == "Yellow") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is leaves
         case "lawnClippings":
             // if the user gets the answer right
-            if itemGuess3 == "green" || "Green" {
+            if (itemGuess3 == "green") || (itemGuess3 == "Green") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess3 == "yellow" || "Yellow" {
+            else if (itemGuess3 == "yellow") || (itemGuess3 == "Yellow") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess3 == "red" || "Red" {
+            else if (itemGuess3 == "red") || (itemGuess3 == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
@@ -253,68 +253,68 @@
         // when item 1 is a can
         case "coffeeCups":
             // if the user gets the answer right
-            if itemGuess4 == "yellow" || "Yellow" {
+            if (itemGuess4 == "yellow") || (itemGuess4 == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess4 == "green" || "Green" {
+            else if (itemGuess4 == "green") || (itemGuess4 == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess4 == "red" || "Red" {
+            else if (itemGuess4 == "red") || (itemGuess4 == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // if item 1 is a paper
         case "bricks":
             // if the user gets the answer right
-            if itemGuess4 == "yellow" || "Yellow" {
+            if (itemGuess4 == "yellow") || (itemGuess4 == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess4 == "green" || "Green" {
+            else if (itemGuess4 == "green") || (itemGuess4 == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess4 == "red" || "Red" {
+            else if (itemGuess4 == "red") || (itemGuess4 == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is pizzaBox
         case "smallBranches":
             // if the user gets the answer right
-            if itemGuess4 == "red" || "Red" {
+            if (itemGuess4 == "red") || (itemGuess4 == "Red") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess4 == "green" || "Green" {
+            else if (itemGuess4 == "green") || (itemGuess4 == "Green"){
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess4 == "yellow" || "Yellow" {
+            else if (itemGuess4 == "yellow") || (itemGuess4 == "Yellow") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is leaves
         case "plasticBags":
             // if the user gets the answer right
-            if itemGuess4 == "green" || "Green" {
+            if (itemGuess4 == "green") || (itemGuess4 == "Green") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess4 == "red" || "Red" {
+            else if (itemGuess4 == "red") || (itemGuess4 == "Red") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess4 == "yellow" || "Yellow" {
+            else if (itemGuess4 == "yellow") || (itemGuess4 == "Yellow") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
@@ -326,68 +326,68 @@
         // when item 1 is a can
         case "newsPaper":
             // if the user gets the answer right
-            if itemGuess5 == "yellow" || "Yellow" {
+            if (itemGuess5 == "yellow") || (itemGuess5 == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess5 == "green" || "Green" {
+            else if (itemGuess5 == "green") || (itemGuess5 == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess5 == "red" || "Red" {
+            else if (itemGuess5 == "red") || (itemGuess5 == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // if item 1 is a paper
         case "cardBoard":
             // if the user gets the answer right
-            if itemGuess5 == "yellow" || "Yellow" {
+            if (itemGuess5 == "yellow") || (itemGuess5 == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess5 == "green" || "Green" {
+            else if (itemGuess5 == "green") || (itemGuess5 == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess5 == "red" || "Red" {
+            else if (itemGuess5 == "red") || (itemGuess5 == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is pizzaBox
         case "electricals":
             // if the user gets the answer right
-            if itemGuess5 == "red" || "Red" {
+            if (itemGuess5 == "red") || (itemGuess5 == "Red") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess5 == "green" || "Green" {
+            else if (itemGuess5 == "green") || (itemGuess5 == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess5 == "yellow" || "Yellow" {
+            else if (itemGuess5 == "yellow") || (itemGuess5 == "Yellow") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is leaves
         case "flowers":
             // if the user gets the answer right
-            if itemGuess5 == "green" || "Green" {
+            if (itemGuess5 == "green") || (itemGuess5 == "Green") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if itemGuess5 == "yellow" || "Yellow" {
+            else if (itemGuess5 == "yellow") || (itemGuess5 == "Yellow") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if itemGuess5 == "red" || "Red" {
+            else if (itemGuess5 == "red") || (itemGuess5 == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
