@@ -1,4 +1,31 @@
-// Declare an array that contains the possible items that can be shown on the first image
+//
+//  ViewControllerGame.swift
+//  RecyQLD
+//
+//  Created by LUBRANO-LAVADERA, Luca on 17/5/19.
+//  Copyright © 2019 LUBRANO-LAVADERA, Luca. All rights reserved.
+//
+
+import UIKit
+
+class ViewControllerGame: UIViewController {
+    // Outlets
+    @IBOutlet weak var txtItem1Input: UITextField!
+    @IBOutlet weak var txtItem2Input: UITextField!
+    @IBOutlet weak var txtItem3Input: UITextField!
+    @IBOutlet weak var txtItem4Input: UITextField!
+    @IBOutlet weak var txtItem5Input: UITextField!
+    @IBOutlet weak var lblErrorMessageItem1: UILabel!
+    @IBOutlet weak var lblErrorMessageItem2: UILabel!
+    @IBOutlet weak var lblErrorMessageItem3: UILabel!
+    @IBOutlet weak var lblErrorMessageItem4: UILabel!
+    @IBOutlet weak var lblErrorMessageItem5: UILabel!
+    @IBOutlet weak var lblGradedScore: UILabel!
+    @IBOutlet weak var lblScoreCount: UILabel!
+    
+    // Actions
+    @IBAction func btnCheckAnswer(_ sender: Any) {
+        // Declare an array that contains the possible items that can be shown on the first image
         var rubbishArray1:[String] = ["aluminiumCan", "paper", "pizzaBox", "leaves"]
         // Declare an array that contains the possible items that can be shown on the second image
         var rubbishArray2:[String] = ["foodScraps", "styrofoam", "hardPlastics", "tissues"]
@@ -395,6 +422,8 @@
             lblErrorMessageItem5.text = "Please enter a valid option"
         }
         
+        lblScoreCount.text = ("\(scoreCount)")
+        
         // Gives the user a letter grade
         if scoreCount > 45 {
             lblGradedScore.text = "S"
@@ -409,3 +438,25 @@
         } else if scoreCount > 0 {
             lblGradedScore.text = "E"
         }
+    }
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
