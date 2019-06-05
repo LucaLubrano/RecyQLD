@@ -1,3 +1,6 @@
+
+2019-06-05 13:21:49.420768+1000 RecyQLD[4975:468953] *** Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<UIViewController 0x7f94fac2ba00> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key lblErrorMessageItem1.'
+
 //
 //  ViewControllerGame.swift
 //  RecyQLD
