@@ -100,7 +100,7 @@
                 scoreCount = scoreCount - 1
             }
         default:
-            txtErrorMessageItem1.text = "Please enter a valid option"
+            lblErrorMessageItem1.text = ("Please enter a valid option")
         }
         // Switch statement 2 for image/item 2
         switch item2 {
@@ -173,7 +173,7 @@
                 scoreCount = scoreCount - 1
             }
         default:
-            txtErrorMessageItem2.text = "Please enter a valid option"
+            lblErrorMessageItem2.text = "Please enter a valid option"
         }
         // Switch statement 3 for image/item 3
         switch item3 {
@@ -246,7 +246,7 @@
                 scoreCount = scoreCount - 1
             }
         default:
-            txtErrorMessageItem3.text = "Please enter a valid option"
+            lblErrorMessageItem3.text = "Please enter a valid option"
         }
         // Switch statement 4 for image/item 4
         switch item4 {
@@ -319,7 +319,7 @@
                 scoreCount = scoreCount - 1
             }
         default:
-            txtErrorMessageItem4.text = "Please enter a valid option"
+            lblErrorMessageItem4.text = "Please enter a valid option"
         }
         // Switch statement 5 for image/item 5
         switch item5 {
@@ -392,5 +392,20 @@
                 scoreCount = scoreCount - 1
             }
         default:
-            txtErrorMessageItem5.text = "Please enter a valid option"
+            lblErrorMessageItem5.text = "Please enter a valid option"
+        }
+        
+        // Gives the user a letter grade
+        if scoreCount > 45 {
+            lblGradedScore.text = "S"
+        } else if scoreCount > 35 {
+            lblGradedScore.text = "A"
+        } else if scoreCount > 25 {
+            lblGradedScore.text = "B"
+        } else if scoreCount > 15 {
+            lblGradedScore.text = "C"
+        } else if scoreCount > 5 {
+            lblGradedScore.text = "D"
+        } else if scoreCount > 0 {
+            lblGradedScore.text = "E"
         }
