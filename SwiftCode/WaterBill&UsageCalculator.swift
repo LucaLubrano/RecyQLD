@@ -1,12 +1,41 @@
-// Teachers way
-        var numOfShowerPerDay : Int? = Int(txtNumOfShowersPD.text!)
-        var timeInShower : Int? = Int(txtTimeInShower.text!)
-        var numWateringPlants : Int? = Int(txtNumWateringPlants.text!)
-        var numWashingCarPerMonth : Int? = Int(txtNumWashingCarPM.text!)
-        var timeWashingCar : Int? = Int(txtTimeWashingCar.text!)
+//
+//  ViewControllerWaterUsage.swift
+//  RecyQLD
+//
+//  Created by LUBRANO-LAVADERA, Luca on 17/5/19.
+//  Copyright © 2019 LUBRANO-LAVADERA, Luca. All rights reserved.
+//
+
+import UIKit
+
+class ViewControllerWaterUsage: UIViewController {
+    // Outlets
+    @IBOutlet weak var txtTimeInShower: UITextField!
+    @IBOutlet weak var txtNumOfShowersPD: UITextField!
+    @IBOutlet weak var txtNumWateringPlants: UITextField!
+    @IBOutlet weak var txtNumWashingCarPM: UITextField!
+    @IBOutlet weak var txtTimeWashingCar: UITextField!
+    @IBOutlet weak var txtWaterUsageTier: UITextField!
+    @IBOutlet weak var lblOutputTimeInShower: UILabel!
+    @IBOutlet weak var lblOutputNumOfShowers: UILabel!
+    @IBOutlet weak var lblOutputWateringPlants: UILabel!
+    @IBOutlet weak var lblOutputNumWashingCar: UILabel!
+    @IBOutlet weak var lblOutputTimeWashingCar: UILabel!
+    @IBOutlet weak var lblOutputWaterUsageTier: UILabel!
+    @IBOutlet weak var lblOutputMoneySaved: UILabel!
+    @IBOutlet weak var lblOutputLitresSaved: UILabel!
+    
+    // Actions
+    @IBAction func btnCalculateSavings(_ sender: Any) {
+        // Teachers way
+        var numOfShowerPerDay : Double? = Double(txtNumOfShowersPD.text!)
+        var timeInShower : Double? = Double(txtTimeInShower.text!)
+        var numWateringPlants : Double? = Double(txtNumWateringPlants.text!)
+        var numWashingCarPerMonth : Double? = Double(txtNumWashingCarPM.text!)
+        var timeWashingCar : Double? = Double(txtTimeWashingCar.text!)
         var waterUsageTier : Int? = Int(txtWaterUsageTier.text!)
-        var litresSaved = 0
-        var litresShowerUsed = 0
+        var litresSaved:Double = 0
+        var litresShowerUsed:Double = 0
         
         
         // Amount of time spent in the shower
@@ -20,9 +49,9 @@
             // If the user's shower time is above the ideal
             if timeInShower! > 3{
                 // Collects the total amount of water used per shower for later calculations
-                litresShowerUsed = (timeInShower! * Int(7.95))
+                litresShowerUsed = (timeInShower! * 7.95)
                 // Collects the amount of water the user could save if they meet the ideal in one variable
-                var litresSaved = litresSaved + litresShowerUsed - (3 * Int(7.95))
+                litresSaved += litresShowerUsed - (3 * 7.95)
                 // Outputs a messege to the user telling them they could reduce their water consumption in this area to save water
                 lblOutputTimeInShower.text = ("Reduce your time in the shower to 3 minutes or less to help reduce your water consumption")
             }
@@ -44,7 +73,7 @@
             // If the user's amount of showers per day is above the ideal
             if numOfShowerPerDay! > 1{
                 // Collects the amount of water the user could save if they meet the ideal in one variable
-                litresSaved = (litresShowerUsed * numOfShowerPerDay!) - (3 * Int(7.95))
+                litresSaved = (litresShowerUsed * numOfShowerPerDay!) - (3 * 7.95)
                 // Outputs a messege to the user telling them they could reduce their water consumption in this area to save water
                 lblOutputNumOfShowers.text = ("Decrease your number of showers a day to 1 to help reduce your water consumption")
             }
@@ -89,7 +118,7 @@
             // If the user washes their car for longer than the ideal
             if timeWashingCar! > 10{
                 // Collects the amount of water the user could save if they meet the ideal in one variable
-                litresSaved += (timeWashingCar! * Int(37.85)) - (10 * Int(37.85))
+                litresSaved += timeWashingCar! * 37.85 - (10 * 37.85)
                 // Outputs a messege to the user telling them they could reduce their water consumption in this area to save water
                 lblOutputTimeWashingCar.text = ("Try to get your car washed within 10 minutes to save on water")
             }
@@ -111,7 +140,7 @@
             // If the user washes their car more frequently than the ideal
             if numWashingCarPerMonth! > 2{
                 // Collects the amount of water the user could save if they meet the ideal in one variable
-                litresSaved += (timeWashingCar! * Int(37.85)) - (10 * Int(37.85))
+                litresSaved += (timeWashingCar! * 37.85) - (10 * 37.85)
                 // Outputs a messege to the user telling them they could reduce their water consumption in this area to save water
                 lblOutputNumWashingCar.text = ("Decrease how frequently you wash your car to save on water")
             }
@@ -123,13 +152,13 @@
         }
         
         // Declare an empty variable that will contain the total value of the water savings
-        var moneySaved = 0
+        var moneySaved:Double = 0
         // Checks the user's water usage tier to calculate the total money saved
         switch waterUsageTier! {
         // If the user's input is 1, the rate for the first water usage tier will be applied
         case 1:
             // Divide the user's litres saved by 1000 as water usage charges are in kilo litres
-            moneySaved = (litresSaved/1000) * Int(2.4441)
+            moneySaved = (litresSaved/1000) * 2.4441
             // Output 2 messages to the user into the final output fields telling them how much money and water they saved
             lblOutputMoneySaved.text = ("\(moneySaved)")
             lblOutputLitresSaved.text = ("\(litresSaved)")
@@ -137,7 +166,7 @@
         // If the user's input is 2, the rate for the second water usage tier will be applied
         case 2:
             // Divide the user's litres saved by 1000 as water usage charges are in kilo litres
-            moneySaved = (litresSaved/1000) * Int(3.1183)
+            moneySaved = (litresSaved/1000) * 3.1183
             // Output 2 messages to the user into the final output fields telling them how much money and water they saved
             lblOutputMoneySaved.text = ("\(moneySaved)")
             lblOutputLitresSaved.text = ("\(litresSaved)")
@@ -145,10 +174,26 @@
         // If the user's input is 3, the rate for the third water usage tier will be applied
         case 3:
             // Divide the user's litres saved by 1000 as water usage charges are in kilo litres
-            moneySaved = (litresSaved/1000) * Int(3.8615)
+            moneySaved = (litresSaved/1000) * 3.8615
             // Output 2 messages to the user into the final output fields telling them how much money and water they saved
             lblOutputMoneySaved.text = ("\(moneySaved)")
             lblOutputLitresSaved.text = ("\(litresSaved)")
         default:
             lblOutputWaterUsageTier.text = ("Please enter a valid number")
         }
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
