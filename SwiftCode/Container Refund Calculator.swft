@@ -1,15 +1,64 @@
-// numOfContainers is the number of containers the user specifies in the text field (as a string)
-var numOfContainers: Int? = Int(txtContainers.text!)
+//
+//  ViewControllerContainerRefund.swift
+//  RecyQLD
+//
+//  Created by LUBRANO-LAVADERA, Luca on 17/5/19.
+//  Copyright © 2019 LUBRANO-LAVADERA, Luca. All rights reserved.
+//
 
-// If the user does not input a number or enters a negative number
-if (numOfContainersInt == nil) || (numOfContainers <= 0){
-  // Print an error asking the user to input a valid number
-  lblErrorMessageRefundCalculator.text = ("Please enter a valid number")
-}
-// Else if the user inputs a valid number
-else if numOfContainersInt > 0 {
-  // Total amount of money the user can get by refunding
-  let refundAmount:Int = numOfContainers! * 0.10
-  // Output the amount on the screen
-  lblRefundOutput.text = ("\(refundAmount)")
+import UIKit
+
+class ViewControllerContainerRefund: UIViewController {
+    //Outputs
+    @IBOutlet weak var txtContainers: UITextField!
+    @IBOutlet weak var lblRefundOutput: UILabel!
+    @IBOutlet weak var lblErrorMessageRefundCalculator: UILabel!
+    //Actions
+    var refundAmountGbl = 0
+    @IBAction func btnRefundCalcMore(_ sender: Any) {
+        //When the user presses the 'more' button it adds 1 container to the var
+        refundAmountGbl += 1
+        txtContainers.text = "\(refundAmountGbl)"
+    }
+    @IBAction func btnRefundCalcLess(_ sender: Any) {
+        //When the user presses the 'less' button it takes 1 container from the var
+        refundAmountGbl -= 1
+        txtContainers.text = "\(refundAmountGbl)"
+    }
+
+    @IBAction func btnCalculate(_ sender: Any) {
+        // numOfContainers is the number of containers the user specifies in the text field (as a string)
+        let numOfContainers:Double? = Double(txtContainers.text!)
+        // If the user does not input a number or enters a negative number
+        if (numOfContainers! == nil) || (numOfContainers! <= 0){
+            // Print an error asking the user to input a valid number
+            lblErrorMessageRefundCalculator.text = ("Please enter a valid number")
+        }
+            // Else if the user inputs a valid number
+        else if numOfContainers! > 0 {
+            // Total amount of money the user can get by refunding
+            let refundAmount:Double = numOfContainers! * 0.10
+            // Output the amount on the screen
+            lblRefundOutput.text = ("\(refundAmount)")
+        }
+    }
+
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }
