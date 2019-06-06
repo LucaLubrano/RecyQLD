@@ -1,6 +1,3 @@
-
-2019-06-05 13:21:49.420768+1000 RecyQLD[4975:468953] *** Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<UIViewController 0x7f94fac2ba00> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key lblErrorMessageItem1.'
-
 //
 //  ViewControllerGame.swift
 //  RecyQLD
@@ -12,21 +9,20 @@
 import UIKit
 
 class ViewControllerGame: UIViewController {
-    // Outlets
+
     @IBOutlet weak var txtItem1Input: UITextField!
     @IBOutlet weak var txtItem2Input: UITextField!
     @IBOutlet weak var txtItem3Input: UITextField!
     @IBOutlet weak var txtItem4Input: UITextField!
     @IBOutlet weak var txtItem5Input: UITextField!
+    @IBOutlet weak var lblScoreCount: UILabel!
+    @IBOutlet weak var lblGradedScore: UILabel!
     @IBOutlet weak var lblErrorMessageItem1: UILabel!
     @IBOutlet weak var lblErrorMessageItem2: UILabel!
     @IBOutlet weak var lblErrorMessageItem3: UILabel!
     @IBOutlet weak var lblErrorMessageItem4: UILabel!
     @IBOutlet weak var lblErrorMessageItem5: UILabel!
-    @IBOutlet weak var lblGradedScore: UILabel!
-    @IBOutlet weak var lblScoreCount: UILabel!
     
-    // Actions
     @IBAction func btnCheckAnswer(_ sender: Any) {
         // Declare an array that contains the possible items that can be shown on the first image
         var rubbishArray1:[String] = ["aluminiumCan", "paper", "pizzaBox", "leaves"]
@@ -51,11 +47,11 @@ class ViewControllerGame: UIViewController {
         var item4 = rubbishArray4[ranNum4]
         var item5 = rubbishArray5[ranNum5]
         // Get the users input as a string from the text field
-        var itemGuess1 = (txtItem1Input.text)
-        var itemGuess2 = (txtItem2Input.text)
-        var itemGuess3 = (txtItem3Input.text)
-        var itemGuess4 = (txtItem4Input.text)
-        var itemGuess5 = (txtItem4Input.text)
+        var itemGuess1:String? = String(txtItem1Input.text!)
+        var itemGuess2:String? = String(txtItem2Input.text!)
+        var itemGuess3:String? = String(txtItem3Input.text!)
+        var itemGuess4:String? = String(txtItem4Input.text!)
+        var itemGuess5:String? = String(txtItem4Input.text!)
         // Declare a variable that will hold the users score
         var scoreCount = 0
         // Determine the if the users guess is correct
@@ -64,68 +60,68 @@ class ViewControllerGame: UIViewController {
         // when item 1 is a can
         case "aluminiumCan":
             // if the user gets the answer right
-            if (itemGuess1 == "yellow") || (itemGuess1 == "Yellow") {
+            if (itemGuess1! == "yellow") || (itemGuess1! == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess1 == "green") || (itemGuess1 == "Green") {
+            else if (itemGuess1! == "green") || (itemGuess1! == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess1 == "red") || (itemGuess1 == "Red") {
+            else if (itemGuess1! == "red") || (itemGuess1! == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // if item 1 is a paper
         case "paper":
             // if the user gets the answer right
-            if (itemGuess1 == "yellow") || (itemGuess1 == "Yellow") {
+            if (itemGuess1! == "yellow") || (itemGuess1! == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess1 == "green") || (itemGuess1 == "Green") {
+            else if (itemGuess1! == "green") || (itemGuess1! == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess1 == "red") || (itemGuess1 == "Red") {
+            else if (itemGuess1! == "red") || (itemGuess1! == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is pizzaBox
         case "pizzaBox":
             // if the user gets the answer right
-            if (itemGuess1 == "red") || (itemGuess1 == "Red") {
+            if (itemGuess1! == "red") || (itemGuess1! == "Red") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess1 == "green") || (itemGuess1 == "Green") {
+            else if (itemGuess1! == "green") || (itemGuess1! == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess1 == "yellow") || (itemGuess1 == "Yellow") {
+            else if (itemGuess1! == "yellow") || (itemGuess1! == "Yellow") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is leaves
         case "leaves":
             // if the user gets the answer right
-            if (itemGuess1 == "green") || (itemGuess1 == "Green") {
+            if (itemGuess1! == "green") || (itemGuess1! == "Green") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess1 == "yellow") || (itemGuess1 == "Yellow") {
+            else if (itemGuess1! == "yellow") || (itemGuess1! == "Yellow") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess1 == "red") || (itemGuess1 == "Red") {
+            else if (itemGuess1! == "red") || (itemGuess1! == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
@@ -137,68 +133,68 @@ class ViewControllerGame: UIViewController {
         // when item 1 is a can
         case "foodScraps":
             // if the user gets the answer right
-            if (itemGuess2 == "yellow") || (itemGuess2 == "Yellow") {
+            if (itemGuess2! == "yellow") || (itemGuess2! == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess2 == "green") || (itemGuess2 == "Green") {
+            else if (itemGuess2! == "green") || (itemGuess2! == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess2 == "red") || (itemGuess2 == "Red") {
+            else if (itemGuess2! == "red") || (itemGuess2! == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // if item 1 is a paper
         case "styrofoam":
             // if the user gets the answer right
-            if (itemGuess2 == "yellow") || (itemGuess2 == "Yellow") {
+            if (itemGuess2! == "yellow") || (itemGuess2! == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess2 == "green") || (itemGuess2 == "Green") {
+            else if (itemGuess2! == "green") || (itemGuess2! == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess2 == "red") || (itemGuess2 == "Red") {
+            else if (itemGuess2! == "red") || (itemGuess2! == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is pizzaBox
         case "hardPlastics":
             // if the user gets the answer right
-            if (itemGuess2 == "red") || (itemGuess2 == "Red") {
+            if (itemGuess2! == "red") || (itemGuess2! == "Red") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess2 == "green") || (itemGuess2 == "Green") {
+            else if (itemGuess2! == "green") || (itemGuess2! == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess2 == "yellow") || (itemGuess2 == "Yellow") {
+            else if (itemGuess2! == "yellow") || (itemGuess2! == "Yellow") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is leaves
         case "tissues":
             // if the user gets the answer right
-            if (itemGuess2 == "green") || (itemGuess2 == "Green") {
+            if (itemGuess2! == "green") || (itemGuess2! == "Green") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess2 == "red") || (itemGuess2 == "Red") {
+            else if (itemGuess2! == "red") || (itemGuess2! == "Red") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess2 == "yellow") || (itemGuess2 == "Yellow") {
+            else if (itemGuess2! == "yellow") || (itemGuess2! == "Yellow") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
@@ -210,68 +206,68 @@ class ViewControllerGame: UIViewController {
         // when item 1 is a can
         case "cartons":
             // if the user gets the answer right
-            if (itemGuess3 == "yellow") || (itemGuess3 == "Yellow") {
+            if (itemGuess3! == "yellow") || (itemGuess3! == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess3 == "green") || (itemGuess3 == "Green") {
+            else if (itemGuess3! == "green") || (itemGuess3! == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess3 == "red") || (itemGuess3 == "Red") {
+            else if (itemGuess3! == "red") || (itemGuess3! == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // if item 1 is a paper
         case "glassBottles":
             // if the user gets the answer right
-            if (itemGuess3 == "yellow") || (itemGuess3 == "Yellow") {
+            if (itemGuess3! == "yellow") || (itemGuess3! == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess3 == "green") || (itemGuess3 == "Green") {
+            else if (itemGuess3! == "green") || (itemGuess3! == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess3 == "red") || (itemGuess3 == "Red") {
+            else if (itemGuess3! == "red") || (itemGuess3! == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is pizzaBox
         case "softPlastics":
             // if the user gets the answer right
-            if (itemGuess3 == "red") || (itemGuess3 == "Red") {
+            if (itemGuess3! == "red") || (itemGuess3! == "Red") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess3 == "green") || (itemGuess3 == "Green") {
+            else if (itemGuess3! == "green") || (itemGuess3! == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess3 == "yellow") || (itemGuess3 == "Yellow") {
+            else if (itemGuess3! == "yellow") || (itemGuess3! == "Yellow") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is leaves
         case "lawnClippings":
             // if the user gets the answer right
-            if (itemGuess3 == "green") || (itemGuess3 == "Green") {
+            if (itemGuess3! == "green") || (itemGuess3! == "Green") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess3 == "yellow") || (itemGuess3 == "Yellow") {
+            else if (itemGuess3! == "yellow") || (itemGuess3! == "Yellow") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess3 == "red") || (itemGuess3 == "Red") {
+            else if (itemGuess3! == "red") || (itemGuess3! == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
@@ -283,68 +279,68 @@ class ViewControllerGame: UIViewController {
         // when item 1 is a can
         case "coffeeCups":
             // if the user gets the answer right
-            if (itemGuess4 == "yellow") || (itemGuess4 == "Yellow") {
+            if (itemGuess4! == "yellow") || (itemGuess4! == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess4 == "green") || (itemGuess4 == "Green") {
+            else if (itemGuess4! == "green") || (itemGuess4! == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess4 == "red") || (itemGuess4 == "Red") {
+            else if (itemGuess4! == "red") || (itemGuess4! == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // if item 1 is a paper
         case "bricks":
             // if the user gets the answer right
-            if (itemGuess4 == "yellow") || (itemGuess4 == "Yellow") {
+            if (itemGuess4! == "yellow") || (itemGuess4! == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess4 == "green") || (itemGuess4 == "Green") {
+            else if (itemGuess4! == "green") || (itemGuess4! == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess4 == "red") || (itemGuess4 == "Red") {
+            else if (itemGuess4! == "red") || (itemGuess4! == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is pizzaBox
         case "smallBranches":
             // if the user gets the answer right
-            if (itemGuess4 == "red") || (itemGuess4 == "Red") {
+            if (itemGuess4! == "red") || (itemGuess4! == "Red") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess4 == "green") || (itemGuess4 == "Green"){
+            else if (itemGuess4! == "green") || (itemGuess4! == "Green"){
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess4 == "yellow") || (itemGuess4 == "Yellow") {
+            else if (itemGuess4! == "yellow") || (itemGuess4! == "Yellow") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is leaves
         case "plasticBags":
             // if the user gets the answer right
-            if (itemGuess4 == "green") || (itemGuess4 == "Green") {
+            if (itemGuess4! == "green") || (itemGuess4! == "Green") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess4 == "red") || (itemGuess4 == "Red") {
+            else if (itemGuess4! == "red") || (itemGuess4! == "Red") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess4 == "yellow") || (itemGuess4 == "Yellow") {
+            else if (itemGuess4! == "yellow") || (itemGuess4! == "Yellow") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
@@ -356,58 +352,58 @@ class ViewControllerGame: UIViewController {
         // when item 1 is a can
         case "newsPaper":
             // if the user gets the answer right
-            if (itemGuess5 == "yellow") || (itemGuess5 == "Yellow") {
+            if (itemGuess5! == "yellow") || (itemGuess5! == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess5 == "green") || (itemGuess5 == "Green") {
+            else if (itemGuess5! == "green") || (itemGuess5! == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess5 == "red") || (itemGuess5 == "Red") {
+            else if (itemGuess5! == "red") || (itemGuess5! == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // if item 1 is a paper
         case "cardBoard":
             // if the user gets the answer right
-            if (itemGuess5 == "yellow") || (itemGuess5 == "Yellow") {
+            if (itemGuess5! == "yellow") || (itemGuess5! == "Yellow") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess5 == "green") || (itemGuess5 == "Green") {
+            else if (itemGuess5! == "green") || (itemGuess5! == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess5 == "red") || (itemGuess5 == "Red") {
+            else if (itemGuess5! == "red") || (itemGuess5! == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is pizzaBox
         case "electricals":
             // if the user gets the answer right
-            if (itemGuess5 == "red") || (itemGuess5 == "Red") {
+            if (itemGuess5! == "red") || (itemGuess5! == "Red") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
                 // if the user gets the worst answer
-            else if (itemGuess5 == "green") || (itemGuess5 == "Green") {
+            else if (itemGuess5! == "green") || (itemGuess5! == "Green") {
                 // take 5 points from their score
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess5 == "yellow") || (itemGuess5 == "Yellow") {
+            else if (itemGuess5! == "yellow") || (itemGuess5! == "Yellow") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
         // when item 1 is leaves
         case "flowers":
             // if the user gets the answer right
-            if (itemGuess5 == "green") || (itemGuess5 == "Green") {
+            if (itemGuess5! == "green") || (itemGuess5! == "Green") {
                 // add 10 points to their score
                 scoreCount = scoreCount + 10
             }
@@ -417,7 +413,7 @@ class ViewControllerGame: UIViewController {
                 scoreCount = scoreCount - 5
             }
                 // if the user gets the incorrect answer
-            else if (itemGuess5 == "red") || (itemGuess5 == "Red") {
+            else if (itemGuess5! == "red") || (itemGuess5! == "Red") {
                 // take 1 point from their score
                 scoreCount = scoreCount - 1
             }
@@ -443,23 +439,24 @@ class ViewControllerGame: UIViewController {
         }
     }
     
+    // Actions
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
