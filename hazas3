@@ -1,0 +1,121 @@
+//
+//  ViewController-TossIt.swift
+//  Clean Earth
+//
+//  Created by AZAS, Harry on 15/5/19.
+//  Copyright © 2019 AZAS, Harry. All rights reserved.
+//
+
+import UIKit
+
+class ViewController_TossIt: UIViewController {
+
+    //assets
+    
+    @IBOutlet weak var txtBinInput: UITextField!
+    
+    @IBOutlet weak var imgItem: UIImageView!
+    
+    @IBOutlet weak var txtPointsOutput: UITextView!
+    
+    @IBOutlet weak var txtSkillOutput: UITextView!
+    
+    @IBOutlet weak var txtErrorMessage: UITextView!
+    
+    var gblScore = 0
+    
+    @IBAction func btnOk(_ sender: Any) {
+        let ranNum: Int = Int.random(in: 0...2)
+        var binItems:[String] = ["bag", "leaves", "cardboard"]
+        let item = binItems[ranNum]
+        var score: Int = 0
+        let answer: String? = String(txtBinInput.text!)
+        imgItem.image = UIImage(named: "\(item)")
+        switch item {
+        // when item 1 is a can
+        case "cardboard":
+            // if the user gets the answer right
+            if (answer! == "yellow") {
+                // add 10 points to their score
+                score = score + 10
+            }
+                // if the user gets the worst answer
+            else if (answer! == "red") {
+                // take 5 points from their score
+                score = score - 5
+            }
+                // if the user gets the incorrect answer
+            else if (answer! == "green") {
+                // take 1 point from their score
+                score = score - 1
+            }
+        case "bag":
+            // if the user gets the answer right
+            if (answer! == "red") {
+                // add 10 points to their score
+                score = score + 10
+            }
+                // if the user gets the worst answer
+            else if (answer! == "yellow") {
+                // take 5 points from their score
+                score = score - 5
+            }
+                // if the user gets the incorrect answer
+            else if (answer! == "green") {
+                // take 1 point from their score
+                score = score - 1
+            }
+        case "leaves":
+            // if the user gets the answer right
+            if (answer! == "green") {
+                // add 10 points to their score
+                score = score + 10
+            }
+                // if the user gets the worst answer
+            else if (answer! == "red") {
+                // take 5 points from their score
+                score = score - 5
+            }
+                // if the user gets the incorrect answer
+            else if (answer! == "yellow") {
+                // take 1 point from their score
+                score = score - 1
+            }
+        default:
+            txtErrorMessage.text = "Please enter a valid bin colour"
+        }
+        
+        
+        gblScore += score
+        txtPointsOutput.text = "Points: \(gblScore)"
+        
+        if gblScore > 0 {
+            txtSkillOutput.text = "Skill Level: Amateur"
+        }
+        else if gblScore > 50 {
+            txtSkillOutput.text = "Skill Level: Intermediate"
+        }
+        else if gblScore > 100 {
+            txtSkillOutput.text = "Skill Level: Pro"
+        }
+   
+    }
+ 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
